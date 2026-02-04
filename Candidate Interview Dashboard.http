@@ -1,0 +1,6 @@
+@Candidate_Interview_Dashboard_HostAddress = http://localhost:5126
+
+GET {{Candidate_Interview_Dashboard_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
