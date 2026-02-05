@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Candidate Interview Dashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+672257535d93fde56f84bcdf6f404d006ff4a39f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+492954cf81129c3ca409c08f4c6bc0d4bb3894cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Candidate Interview Dashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Candidate Interview Dashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

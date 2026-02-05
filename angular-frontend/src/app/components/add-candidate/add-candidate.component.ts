@@ -53,7 +53,7 @@ export class AddCandidateComponent {
 
     const candidate = {
       ...this.candidateForm.value,
-      cellphone: parseInt(this.candidateForm.value.cellphone, 10)
+      cellphone: this.candidateForm.value.cellphone ? parseInt(this.candidateForm.value.cellphone, 10) : null
     };
 
     this.candidateService.createCandidate(candidate).subscribe({

@@ -1,17 +1,28 @@
 <div class="list-container">
   <div class="list-header">
     <h1>Candidates</h1>
-    <a href="/create" class="btn btn-primary">+ Add Candidate</a>
+    
+    <div class="search-container">
+      <input 
+        type="text" 
+        [(ngModel)]="searchTerm" 
+        (input)="applyFilter()" 
+        placeholder="Search by name or surname..." 
+        class="filter-input"
+      />
+    </div>
+
+    <a routerLink="/create" class="btn btn-primary">+ Add Candidate</a>
   </div>
 
   <div *ngIf="loading" class="loading">Loading candidates...</div>
   <div *ngIf="error" class="error">{{ error }}</div>
 
-  <div *ngIf="!loading && candidates.length === 0" class="no-data">
-    <p>No candidates found. <a href="/create">Add one now!</a></p>
+  <div *ngIf="!loading && filteredCandidates.length === 0" class="no-data">
+    <p>No candidates found matching that name. <a routerLink="/create">Add one now!</a></p>
   </div>
 
-  <div *ngIf="!loading && candidates.length > 0" class="table-responsive">
+  <div *ngIf="!loading && filteredCandidates.length > 0" class="table-responsive">
     <table class="candidates-table">
       <thead>
         <tr>
@@ -25,7 +36,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let candidate of candidates">
+        <tr *ngFor="let candidate of filteredCandidates">
           <td>{{ candidate.id }}</td>
           <td>{{ candidate.firstName }}</td>
           <td>{{ candidate.lastName }}</td>
@@ -37,11 +48,8 @@
             </span>
           </td>
           <td>
-            <button 
-              class="btn btn-view" 
-              (click)="openCandidateDetail(candidate)"
-            >
-              View
+            <button class="btn btn-view" (click)="openCandidateDetail(candidate)">
+              View / Update
             </button>
           </td>
         </tr>
@@ -50,6 +58,6 @@
   </div>
 
   <div class="list-footer">
-    <a href="/" class="btn btn-secondary">Back to Dashboard</a>
+    <a routerLink="/" class="btn btn-secondary">Back to Dashboard</a>
   </div>
 </div>

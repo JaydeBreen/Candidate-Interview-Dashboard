@@ -1,3 +1,25 @@
+/* --- Added for Search Filter --- */
+.search-container {
+  flex-grow: 1;
+  max-width: 400px;
+  margin: 0 20px;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+.filter-input:focus {
+  border-color: #667eea;
+}
+/* --- End of Search Filter Additions --- */
+
 .list-container {
   max-width: 1400px;
   margin: 0 auto;

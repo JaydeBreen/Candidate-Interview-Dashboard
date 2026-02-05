@@ -8,7 +8,7 @@ export interface Candidate {
   firstName: string;
   lastName: string;
   email: string;
-  cellphone: number;
+  cellphone: number | null;
   status: string;
   jobRole: string;
 }
@@ -17,6 +17,7 @@ export interface Summary {
   total: number;
   hired: number;
   rejected: number;
+  interviewing: number;
 }
 
 @Injectable({
@@ -41,4 +42,9 @@ export class CandidateService {
   createCandidate(candidate: Candidate): Observable<Candidate> {
     return this.http.post<Candidate>(this.apiUrl, candidate);
   }
+
+  // Update existing candidate
+updateCandidate(id: number, candidate: Candidate): Observable<any> {
+  return this.http.put(`${this.apiUrl}/${id}`, candidate);
+}
 }

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿﻿﻿﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using Candidate_Interview_Dashboard.Data;
@@ -32,11 +32,13 @@ namespace Candidate_Interview_Dashboard.Controllers
         {
             var total = await _context.Candidates.CountAsync();
             var hired = await _context.Candidates.CountAsync(c => c.Status == "Hired");
+            var interviewing = await _context.Candidates.CountAsync(c => c.Status == "Interviewing");
             var rejected = await _context.Candidates.CountAsync(c => c.Status == "Rejected");
 
             return Ok(new
             {
                 Total = total,
+                Interviewing = interviewing,
                 Hired = hired,
                 Rejected = rejected
             }); 
@@ -56,6 +58,31 @@ namespace Candidate_Interview_Dashboard.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetCandidates), new { id = candidate.Id }, candidate); 
+        }
+
+        // 4. PUT: api/candidates/{id}
+        // Updates an existing candidate
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCandidate(int id, Candidate candidate)
+        {
+            if (id != candidate.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(candidate).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!await _context.Candidates.AnyAsync(c => c.Id == id)) return NotFound();
+                else throw;
+            }
+
+            return NoContent();
         }
     }
 }
