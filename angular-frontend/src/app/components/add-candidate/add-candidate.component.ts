@@ -30,9 +30,9 @@ export class AddCandidateComponent {
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      cellphone: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
-      status: ['Pending', Validators.required],
-      jobRole: ['', [Validators.required, Validators.minLength(2)]]
+      cellphone: ['', [Validators.pattern(/^\d+$/)]],
+      status: ['Pending'],
+      jobRole: ['']
     });
   }
 

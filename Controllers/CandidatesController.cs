@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using Candidate_Interview_Dashboard.Data;
 using Candidate_Interview_Dashboard.Models;
 
