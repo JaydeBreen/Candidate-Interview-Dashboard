@@ -1,0 +1,55 @@
+<div class="list-container">
+  <div class="list-header">
+    <h1>Candidates</h1>
+    <a href="/create" class="btn btn-primary">+ Add Candidate</a>
+  </div>
+
+  <div *ngIf="loading" class="loading">Loading candidates...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="!loading && candidates.length === 0" class="no-data">
+    <p>No candidates found. <a href="/create">Add one now!</a></p>
+  </div>
+
+  <div *ngIf="!loading && candidates.length > 0" class="table-responsive">
+    <table class="candidates-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Job Role</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let candidate of candidates">
+          <td>{{ candidate.id }}</td>
+          <td>{{ candidate.firstName }}</td>
+          <td>{{ candidate.lastName }}</td>
+          <td>{{ candidate.email }}</td>
+          <td>{{ candidate.jobRole }}</td>
+          <td>
+            <span [class]="'status-badge ' + getStatusClass(candidate.status)">
+              {{ candidate.status }}
+            </span>
+          </td>
+          <td>
+            <button 
+              class="btn btn-view" 
+              (click)="openCandidateDetail(candidate)"
+            >
+              View
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="list-footer">
+    <a href="/" class="btn btn-secondary">Back to Dashboard</a>
+  </div>
+</div>

@@ -1,0 +1,114 @@
+<div class="form-container">
+  <div class="form-wrapper">
+    <h1>Add New Candidate</h1>
+    
+    <div *ngIf="error" class="alert alert-error">
+      {{ error }}
+    </div>
+    
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <form [formGroup]="candidateForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name *</label>
+        <input
+          type="text"
+          id="firstName"
+          class="form-control"
+          [class.is-invalid]="isFieldInvalid('firstName')"
+          formControlName="firstName"
+          placeholder="John"
+        />
+        <small *ngIf="isFieldInvalid('firstName')" class="error-message">
+          <span *ngIf="f['firstName'].errors?.['required']">First Name is required</span>
+          <span *ngIf="f['firstName'].errors?.['minlength']">First Name must be at least 2 characters</span>
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name *</label>
+        <input
+          type="text"
+          id="lastName"
+          class="form-control"
+          [class.is-invalid]="isFieldInvalid('lastName')"
+          formControlName="lastName"
+          placeholder="Doe"
+        />
+        <small *ngIf="isFieldInvalid('lastName')" class="error-message">
+          <span *ngIf="f['lastName'].errors?.['required']">Last Name is required</span>
+          <span *ngIf="f['lastName'].errors?.['minlength']">Last Name must be at least 2 characters</span>
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          [class.is-invalid]="isFieldInvalid('email')"
+          formControlName="email"
+          placeholder="john@example.com"
+        />
+        <small *ngIf="isFieldInvalid('email')" class="error-message">
+          <span *ngIf="f['email'].errors?.['required']">Email is required</span>
+          <span *ngIf="f['email'].errors?.['email']">Please enter a valid email address</span>
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="cellphone">Cellphone *</label>
+        <input
+          type="text"
+          id="cellphone"
+          class="form-control"
+          [class.is-invalid]="isFieldInvalid('cellphone')"
+          formControlName="cellphone"
+          placeholder="1234567890"
+        />
+        <small *ngIf="isFieldInvalid('cellphone')" class="error-message">
+          <span *ngIf="f['cellphone'].errors?.['required']">Cellphone is required</span>
+          <span *ngIf="f['cellphone'].errors?.['pattern']">Cellphone must contain only numbers</span>
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="jobRole">Job Role *</label>
+        <input
+          type="text"
+          id="jobRole"
+          class="form-control"
+          [class.is-invalid]="isFieldInvalid('jobRole')"
+          formControlName="jobRole"
+          placeholder="Senior Developer"
+        />
+        <small *ngIf="isFieldInvalid('jobRole')" class="error-message">
+          <span *ngIf="f['jobRole'].errors?.['required']">Job Role is required</span>
+          <span *ngIf="f['jobRole'].errors?.['minlength']">Job Role must be at least 2 characters</span>
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status" class="form-control" formControlName="status">
+          <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="loading"
+        >
+          <span *ngIf="!loading">Submit</span>
+          <span *ngIf="loading">Loading...</span>
+        </button>
+        <a href="/list" class="btn btn-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

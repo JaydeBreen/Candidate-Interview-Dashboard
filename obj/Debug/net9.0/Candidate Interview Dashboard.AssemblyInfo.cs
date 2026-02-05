@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Candidate Interview Dashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5de1f876577946972e46d46d9684f7b3408b7686")]
 [assembly: System.Reflection.AssemblyProductAttribute("Candidate Interview Dashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Candidate Interview Dashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

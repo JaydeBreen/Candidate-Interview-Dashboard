@@ -145,10 +145,15 @@ C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\stat
 C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\Candidat.FD3A63A9.Up2Date
 C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\Candidate Interview Dashboard.dll
 C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\refint\Candidate Interview Dashboard.dll
 C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\Candidate Interview Dashboard.pdb
 C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\Candidate Interview Dashboard.genruntimeconfig.cache
 C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\ref\Candidate Interview Dashboard.dll
+C:\Users\Darren\source\repos\Candidate Interview Dashboard\bin\Debug\net9.0\angular-frontend\angular.json
+C:\Users\Darren\source\repos\Candidate Interview Dashboard\bin\Debug\net9.0\angular-frontend\package-lock.json
+C:\Users\Darren\source\repos\Candidate Interview Dashboard\bin\Debug\net9.0\angular-frontend\package.json
+C:\Users\Darren\source\repos\Candidate Interview Dashboard\bin\Debug\net9.0\angular-frontend\tsconfig.app.json
+C:\Users\Darren\source\repos\Candidate Interview Dashboard\bin\Debug\net9.0\angular-frontend\tsconfig.json
+C:\Users\Darren\source\repos\Candidate Interview Dashboard\obj\Debug\net9.0\Candidate Interview Dashboard.sourcelink.json
